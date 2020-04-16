@@ -2,7 +2,7 @@
 /**
 Plugin Name: Caldera Forms Bing Integration
 Description: Adds Bing Maps API to caldera.
-Version: 0.1
+Version: 0.1-alpha2
 Author: Zack Palmer (zacnoo)
 */
 
