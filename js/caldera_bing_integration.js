@@ -18,13 +18,13 @@ $(document).on('cf.form.init', function(event, data){
 			var apiTimer;
 
 			//Workshop address
-			var workshopLocation = "37 Cape Street Perth"
+			var workshopLocation = "37 Cape Street Perth";
 
 			//Customers vehicle location.
 			var customerVehicleAddress;
 
 			//Travel time description
-			var travelTimeMinutes
+			var travelTimeMinutes;
 
 			//Grabs the form state
 			var state = data.state;
@@ -36,9 +36,6 @@ $(document).on('cf.form.init', function(event, data){
 			//Get field id based on class 'minutes_to_travel'
 			//This is computer output field
 			var travelTimeFieldID = $('.minutes_to_travel').attr('data-field-wrapper');
-
-			//Get field id based on class 'travel_time_description'
-			var travelTimeDescription = $('.travel_time_description').attr('id');
 
 			//Subcribes to key presses on the addressField
 			state.events().subscribe(addressFieldID, function(value,fieldId){
