@@ -1,7 +1,10 @@
 jQuery(document).on('cf.form.init', function(event, data){
+	var calculationRefresh;
+	calculationRefresh.setTimeout(function(){
+		jQuery(document).trigger('onchange');
+		jQuery(document).trigger('cf.add');
+	},1000);
 
-	jQuery(document).trigger('onchange');
-	jQuery(document).trigger('cf.add');
 		/**
 	 The object in the variable data has the following keys:
 	 
