@@ -3,7 +3,6 @@ jQuery(document).on('cf.form.init', function(event, data){
 	calculationRefresh.setTimeout(function(){
 		jQuery(document).trigger('onchange');
 		jQuery(document).trigger('cf.add');
-		console.log("attempting recalc")
 	},1000);
 
 		/**
