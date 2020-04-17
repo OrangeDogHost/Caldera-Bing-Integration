@@ -66,6 +66,8 @@ jQuery(document).on('cf.form.init', function(event, data){
 								//TODO add user warning for api failure "please refresh page"
 								jQuery('.travel_time_description').html("Bing Maps API request failed, please contact website administrator.");
 							}
+							//Logs bing text status to console
+							console.log(textStatus);
 
 
 							//Grabbing main resources
@@ -97,8 +99,6 @@ jQuery(document).on('cf.form.init', function(event, data){
 							}else{
 								console.log("Bing request unsuccessful, warning user.");
 
-								//Logs bing text status to console
-								console.log(textStatus);
 								jQuery('.travel_time_description').html("Request failed, please check the address and try again.");
 								//TODO get bing error status and print to page
 								//TODO add user warning for invalid address
