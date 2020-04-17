@@ -63,11 +63,7 @@ jQuery(document).on('cf.form.init', function(event, data){
 								console.log("BingAPI authentication successful");
 							}else{
 								console.log("BingAPI authentication failed, warning user.");
-								//TODO add user warning for api failure "please refresh page"
-								jQuery('.travel_time_description').html("Bing Maps API request failed, please contact website administrator.");
 							}
-							//Logs bing text status to console
-							console.log(textStatus);
 
 
 							//Grabbing main resources
@@ -104,7 +100,10 @@ jQuery(document).on('cf.form.init', function(event, data){
 								//TODO add user warning for invalid address
 							}
 						}//end of BingAPI returned function.
-					);//Bing API request over
+					)//Bing API request over
+					.fail(function(){
+							jQuery('.travel_time_description').html("Bing Maps API request failed, please contact website administrator.");
+						});
 
 				},5000);
 
