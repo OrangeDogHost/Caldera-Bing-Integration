@@ -97,7 +97,8 @@ jQuery(document).on('cf.form.init', function(event, data){
 							}else{
 								console.log("Bing request unsuccessful, warning user.");
 
-								//Generic Error
+								//Logs bing text status to console
+								console.log(textStatus);
 								jQuery('.travel_time_description').html("Request failed, please check the address and try again.");
 								//TODO get bing error status and print to page
 								//TODO add user warning for invalid address
