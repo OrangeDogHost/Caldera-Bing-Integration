@@ -87,6 +87,10 @@ jQuery(document).on('cf.form.init', function(event, data){
 
 								//Janky jQuery set that still doesn't have a fix
 								jQuery("[data-field="+travelTimeFieldID+"]").val(travelTimeMinutes);
+
+								//Trigger input to cause Caldera to recalculate
+								jQuery(document).trigger('cf.add');
+
 							}else{
 								console.log("Bing request unsuccessful, warning user.");
 								//TODO add user warning
