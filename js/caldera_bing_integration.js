@@ -1,6 +1,6 @@
 jQuery(document).on('cf.form.init', function(event, data){
 
-	jQuery(document).trigger('onchange');
+	jQuery(input).trigger('onchange');
 	jQuery(document).trigger('cf.add');
 		/**
 	 The object in the variable data has the following keys:
