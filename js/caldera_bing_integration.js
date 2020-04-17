@@ -63,7 +63,7 @@ jQuery(document).on('cf.form.init', function(event, data){
 								console.log("BingAPI authentication successful");
 							}else{
 								console.log("BingAPI authentication failed, warning user.");
-								//TODO add user warning
+								//TODO add user warning for api failure "please refresh page"
 							}
 
 
@@ -82,10 +82,10 @@ jQuery(document).on('cf.form.init', function(event, data){
 								console.log("Bing request successful, printing to caldera");
 								
 								//Setting Caldera Value to travel time
-								//TODO this doesn't seem to work, caldera doesn't update the calculation field.
 								state.mutateState(travelTimeFieldID,travelTimeMinutes);
 
 								//Janky jQuery set that still doesn't have a fix
+								console.log("Setting "+travelTimeFieldID+" to "+travelTimeMinutes);
 								jQuery("[data-field="+travelTimeFieldID+"]").val(travelTimeMinutes);
 
 								//Trigger input to cause Caldera to recalculate
@@ -93,7 +93,8 @@ jQuery(document).on('cf.form.init', function(event, data){
 
 							}else{
 								console.log("Bing request unsuccessful, warning user.");
-								//TODO add user warning
+								//TODO get bing error status and print to page
+								//TODO add user warning for invalid address
 							}
 						}//end of BingAPI returned function.
 					);//Bing API request over
