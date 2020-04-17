@@ -89,7 +89,7 @@ jQuery(document).on('cf.form.init', function(event, data){
 								jQuery("[data-field="+travelTimeFieldID+"]").val(travelTimeMinutes);
 
 								//Trigger input to cause Caldera to recalculate
-								jQuery(document).trigger('cf.add');
+								jQuery("[data-field="+travelTimeFieldID+"]").trigger('onchange');
 
 							}else{
 								console.log("Bing request unsuccessful, warning user.");
