@@ -35,7 +35,7 @@ jQuery(document).on('cf.form.init', function(event, data){
 
 			//Get field id based on class 'minutes_to_travel'
 			//This is computer output field
-			var travelTimeFieldID = jQuery('.minutes_to_travel').attr('data-field-wrapper');
+			var travelTimeFieldID = jQuery('.minutes_to_travel').attr('id');
 
 			//Subcribes to key presses on the addressField
 			state.events().subscribe(addressFieldID, function(value,fieldId){
