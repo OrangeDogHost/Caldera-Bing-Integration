@@ -1,4 +1,4 @@
-$(document).on('cf.form.init', function(event, data){
+jQuery(document).on('cf.form.init', function(event, data){
 
 		/**
 	 The object in the variable data has the following keys:
@@ -31,11 +31,11 @@ $(document).on('cf.form.init', function(event, data){
 
 			//Grabs field based on placeholder 'Address of vehicle'.
 			//This is user input field
-			var addressFieldID = $("[placeholder='Address of vehicle']").attr('id');
+			var addressFieldID = jQuery("[placeholder='Address of vehicle']").attr('id');
 
 			//Get field id based on class 'minutes_to_travel'
 			//This is computer output field
-			var travelTimeFieldID = $('.minutes_to_travel').attr('data-field-wrapper');
+			var travelTimeFieldID = jQuery('.minutes_to_travel').attr('data-field-wrapper');
 
 			//Subcribes to key presses on the addressField
 			state.events().subscribe(addressFieldID, function(value,fieldId){
@@ -51,7 +51,7 @@ $(document).on('cf.form.init', function(event, data){
 
 
 					//Bing API request begin.
-					$.get("https://dev.virtualearth.net/REST/v1/Routes/Driving",{
+					jQuery.get("https://dev.virtualearth.net/REST/v1/Routes/Driving",{
 						//Company Address
 						"wayPoint.1":workshopLocation,
 						"wayPoint.2":customerVehicleAddress,
@@ -86,7 +86,7 @@ $(document).on('cf.form.init', function(event, data){
 								state.mutateState(travelTimeFieldID,travelTimeMinutes);
 
 								//Janky jQuery set that still doesn't have a fix
-								$("[data-field="+travelTimeFieldID+"]").val(travelTimeMinutes);
+								jQuery("[data-field="+travelTimeFieldID+"]").val(travelTimeMinutes);
 							}else{
 								console.log("Bing request unsuccessful, warning user.");
 								//TODO add user warning
