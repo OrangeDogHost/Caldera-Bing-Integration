@@ -37,7 +37,6 @@ jQuery(document).on('cf.form.init', function(event, data){
 			//This is computer output field
 			var travelTimeFieldID = jQuery('.minutes_to_travel').attr('data-field-wrapper');
 
-
 			//Subcribes to key presses on the addressField
 			state.events().subscribe(addressFieldID, function(value,fieldId){
 				//Address field input triggered, clearing timeout.
@@ -65,6 +64,7 @@ jQuery(document).on('cf.form.init', function(event, data){
 							}else{
 								console.log("BingAPI authentication failed, warning user.");
 								//TODO add user warning for api failure "please refresh page"
+								jQuery('.travel_time_description').html("Bing Maps API request failed, please contact website administrator.");
 							}
 
 
@@ -94,6 +94,9 @@ jQuery(document).on('cf.form.init', function(event, data){
 
 							}else{
 								console.log("Bing request unsuccessful, warning user.");
+
+								//Generic Error
+								jQuery('.travel_time_description').html("Request failed, please check the address and try again.");
 								//TODO get bing error status and print to page
 								//TODO add user warning for invalid address
 							}
