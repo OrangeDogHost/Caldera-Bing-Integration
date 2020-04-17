@@ -90,7 +90,7 @@ jQuery(document).on('cf.form.init', function(event, data){
 								jQuery("[data-field="+travelTimeFieldID+"]").val(travelTimeMinutes);
 
 								//Trip description.
-								jQuery('.travel_time_description').html("Found address! This trip will take "+travelTimeMinutes+" minutes.");
+								jQuery('.travel_time_description').html("<h4>Found address! This trip will take "+travelTimeMinutes+" minutes.</h4>");
 								//Trigger input to cause Caldera to recalculate
 								jQuery(document).trigger('cf.add');
 
