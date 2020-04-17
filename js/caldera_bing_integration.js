@@ -35,7 +35,7 @@ jQuery(document).on('cf.form.init', function(event, data){
 
 			//Get field id based on class 'minutes_to_travel'
 			//This is computer output field
-			var travelTimeFieldID = jQuery('.minutes_to_travel').attr('id');
+			var travelTimeFieldID = jQuery('.minutes_to_travel').attr('data-field-wrapper');
 
 			//Subcribes to key presses on the addressField
 			state.events().subscribe(addressFieldID, function(value,fieldId){
@@ -86,7 +86,7 @@ jQuery(document).on('cf.form.init', function(event, data){
 
 								//Janky jQuery set that still doesn't have a fix
 								console.log("Setting "+travelTimeFieldID+" to "+travelTimeMinutes);
-								jQuery("#"+travelTimeFieldID).val(travelTimeMinutes);
+								jQuery("[data-field="+travelTimeFieldID+"]").val(travelTimeMinutes);
 
 								//Trigger input to cause Caldera to recalculate
 								jQuery(document).trigger('cf.add');
