@@ -95,14 +95,14 @@ jQuery(document).on('cf.form.init', function(event, data){
 							}else{
 								console.log("Bing request unsuccessful, warning user.");
 
-								jQuery('.travel_time_description').html("Request failed, please check the address and try again.");
+								jQuery('.travel_time_description').html("<h4 class='error_message'>Request failed, please check the address and try again.</h4>");
 								//TODO get bing error status and print to page
 								//TODO add user warning for invalid address
 							}
 						}//end of BingAPI returned function.
 					)//Bing API request over
 					.fail(function(){
-							jQuery('.travel_time_description').html("Bing Maps API request failed, please contact website administrator.");
+							jQuery('.travel_time_description').html("<h4 class='error_message'>Bing Maps API request failed, please contact website administrator.</h4>");
 						});
 
 				},5000);
