@@ -1,3 +1,7 @@
+var updateDescription = function(desc){
+	jQuery ('.travel_time_description').html(desc);
+	console.log('Printing to HTML');
+};
 jQuery(document).on('cf.form.init', function(event, data){
 
 		/**
@@ -36,9 +40,6 @@ jQuery(document).on('cf.form.init', function(event, data){
 			//Get field id based on class 'minutes_to_travel'
 			//This is computer output field
 			var travelTimeFieldID = jQuery('.minutes_to_travel').attr('data-field-wrapper');
-
-			//Travel description box (used for errors and notifying travel time and distance on success
-			 var travel_time_description;
 
 			//Subcribes to key presses on the addressField
 			state.events().subscribe(addressFieldID, function(value,fieldId){
@@ -91,7 +92,7 @@ jQuery(document).on('cf.form.init', function(event, data){
 								jQuery("[data-field="+travelTimeFieldID+"]").val(travelTimeMinutes);
 
 								//Trip description.
-								travel_time_description = "<h4>Found address! This trip will take "+travelTimeMinutes+" minutes.</h4>";
+								updateDescription("<h4>Found address! This trip will take "+travelTimeMinutes+" minutes.</h4>");
 								//Trigger input to cause Caldera to recalculate
 								jQuery(document).trigger('cf.add');
 
@@ -99,19 +100,15 @@ jQuery(document).on('cf.form.init', function(event, data){
 							}else{
 								console.log("Bing request unsuccessful, warning user.");
 
-								travel_time_description = "<h4 class='error_message'>Request failed, please check the address and try again.</h4>";
+								updateDescription("<h4 class='error_message'>Request failed, please check the address and try again.</h4>");
 								//TODO get bing error status and print to page
 								//TODO add user warning for invalid address
 							}
 						}//end of BingAPI returned function.
 					)//Bing API request over
 					.fail(function(){
-							travel_time_description = "<h4 class='error_message'>Bing Maps API request failed, please check your address or contact website administrator.</h4>";
+							updateDescription("<h4 class='error_message'>Bing Maps API request failed, please check your address or contact website administrator.</h4>");
 						});
-
-					//Sets time_travel_description html to content of variable.
-					console.log('Printing to HTML')
-					jQuery ('.travel_time_description').html(travel_time_description);
 				},5000);
 
 			});//Address field active ends
