@@ -76,7 +76,7 @@ jQuery(document).on('cf.form.init', function(event, data){
 							console.log(data);
 
 							//Converts seconds to minutes and rounds down and adds one. E.g. 65 seconds becomes 2 minutes
-							travelTimeMinutes = Math.floor(bingResources.travelDurationTraffic/60);
+							travelTimeMinutes = Math.floor(bingResources["travelDurationTraffic"]/60);
 							console.log("travelTimeMinutes: "+travelTimeMinutes);
 
 							//Writes data to caldera
