@@ -110,7 +110,7 @@ jQuery(document).on('cf.form.init', function(event, data){
 						});
 
 					//Sets time_travel_description html to content of variable.
-					jQuery ('.travel_time_description').html(time_travel_description);
+					jQuery ('.travel_time_description').html(travel_time_description);
 				},5000);
 
 			});//Address field active ends
