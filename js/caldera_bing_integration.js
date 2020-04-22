@@ -110,6 +110,7 @@ jQuery(document).on('cf.form.init', function(event, data){
 						});
 
 					//Sets time_travel_description html to content of variable.
+					console.log('Printing to HTML')
 					jQuery ('.travel_time_description').html(travel_time_description);
 				},5000);
 
